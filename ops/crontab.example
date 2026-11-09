@@ -1,0 +1,5 @@
+# ops/crontab.example
+# Template for scheduling the pipeline.
+# Install with: crontab -e
+
+0 6 * * * cd /Users/bella/kenya-food-prices-pipeline && ./run_pipeline.sh >> logs/cron.log 2>&1
