@@ -17,7 +17,7 @@ Cannot yet refresh with new data without rebuilding the database (see below)
 Prerequisites
 
 Docker Desktop (or Docker Engine + Compose plugin)
-Python 3.11+
+Python 3.13+
 Free port 5432 on your local machine
 Setup
 
