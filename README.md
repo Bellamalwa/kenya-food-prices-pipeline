@@ -4,7 +4,11 @@ A containerized data pipeline that loads World Food Programme (WFP) food price d
 
 ## What it does
 
-Downloads WFP food price CSVs for Kenya and loads them into a PostgreSQL database running in Docker. The pipeline is designed to support analysis of food price trends across Kenyan markets and commodities, and to make those insights accessible for policy and food security work.
+It loads 18 years of Kenyan market food price records into a database that can be queried quickly. The eventual goal is to answer one question, month after month: are food prices rising, and by how much? Once complete, the pipeline will let a restaurant owner compare their supplier's price to what other markets are charging.
+
+## What this does NOT do
+
+It can't predict prices, and it only covers the foods and markets the data includes.
 
 **Current status:** 
 
@@ -18,6 +22,7 @@ Data is loaded manually from downloaded CSVs. Automated download is on the roadm
 ## Quickstart
 
 **Clone the repo**
+
    ```bash
    git clone https://github.com/Bellamalwa/kenya-food-prices-pipeline.git
    cd kenya-food-prices-pipeline
@@ -37,6 +42,7 @@ If you see `0`, the seed didn't run. Check the logs:
 docker compose logs db | grep -i error
 ```
 ### Project structure
+
 ```text
 .
 ├── docker-compose.yml              # Postgres service definition
@@ -61,18 +67,22 @@ Note: `init-scripts/` only run on the **first** container startup, when the `pgd
 - **Currency:** KES (Kenyan Shilling)
 
 ## Current Status
+
 ✅ Done
 - Postgres + Docker Compose setup
 - Schema + initial data load
 - Data profiling
 
 🚧 In progress
+
 - Data cleaning decisions (commodity grouping, orphan markets)
 
 🔜 Next
+
 - Analysis queries (price trends, county comparisons)
 - Automated CSV refresh
 - API layer for dashboards
 
 ## License
+
 All rights reserved
