@@ -8,7 +8,7 @@ pipeline:
 	@echo "Running transformations..."
 	docker compose exec -T db psql -U foodprices_user -d kenya_food_prices < transform/02_aggregate.sql
 	@echo "Exporting..."
-	python3 serve/export_summary.py
+	.venv/bin/python serve/export_summary.py
 	@echo "Done."
 
 .PHONY: test
