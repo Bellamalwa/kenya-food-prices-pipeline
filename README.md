@@ -19,16 +19,12 @@ Data is loaded manually from downloaded CSVs. Automated download is on the roadm
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine + Compose plugin)
 - Free port `5432` on your local machine
 
-## Quickstart
-
-**Clone the repo**
-
-   ```bash
-   git clone https://github.com/Bellamalwa/kenya-food-prices-pipeline.git
-   cd kenya-food-prices-pipeline
-   cp .env.example .env
-   docker compose up -d
-   ```
+## Setup
+1. Clone the repo
+2. `cp .env.example .env` and fill in your values
+3. `python3 -m venv .venv && source .venv/bin/activate`
+4. `pip install -r requirements.txt`
+5. `make pipeline`
 
 ### Verify it worked
 
@@ -82,6 +78,11 @@ Note: `init-scripts/` only run on the **first** container startup, when the `pgd
 - Analysis queries (price trends, county comparisons)
 - Automated CSV refresh
 - API layer for dashboards
+
+## Running the pipeline
+
+```bash
+make pipeline
 
 ## License
 
